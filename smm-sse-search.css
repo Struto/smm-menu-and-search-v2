@@ -1,0 +1,210 @@
+/* ==========================================================================
+   GOOLGE STURTO SEARCH ENGINE EXTENDED VERSION 1
+   ==========================================================================
+   ========================================================================== */
+
+/* ==========================================================================
+   Settings
+   ========================================================================== */
+
+/* General menu setting XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+  {% set SSEfontFamily              = "Georgia, 'Times New Roman', Times, serif" %} /* Set menu font color for menu bar */
+  {% set SSEButtonColor             = "#000" %} /* Set buttons background color */
+  {% set SSETitleColor              = "#000" %} /* Set title background Color */
+  {% set SSEDescriptionStyle        = "italic" %} /* Set description style italic or normal */
+  {% set SSETagsColor               = "#E84747" %} /* Set color for a keyword tag */
+  {% set SSEPagination              = "#CECECE" %} /* Set inactive pagination button color */
+  {% set SSEPaginationHover         = "#A5A5A5" %} /* Set pagination hover button color */
+  {% set SSESizeTitle               = "28px" %} /* Set title font size */
+  {% set SSESizeDescription         = "16px" %} /* Set description font size */
+
+/******************** Display None Unaccessary content ************************/    
+/* Do no display the count of search results */    
+.gsc-result-info {
+    display: none;
+}
+/* Hide the Google branding in search results */
+.gsc-adBlock, .gsc-adBlockNoHeight,
+.gcsc-branding {
+    display: none !important; 
+}
+/* Hide the thumbnail images in search results */
+.gsc-thumbnail {
+    display: none;
+}
+
+/* Search Bar AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA */
+table.gsc-search-box,
+form.gsc-search-box {
+    margin-bottom: 0 !important;
+}
+/* Search Input */
+.gsc-search-box-tools .gsc-search-box td.gsc-input {
+    padding-right: 0;
+}
+div.gsc-input-box {
+    border: 0px solid #D9D9D9; 
+    background: #fff;
+    height: 38px;
+}
+input.gsc-input {
+     background-image: none !important;
+     margin-top: -1px !important;
+     padding-left: 10px !important;
+     padding-right: 10px !important;
+     border: 1px solid {{ SSEButtonColor }} !important;
+     height: 36px !important;
+}
+.gsib_a {
+    padding: 0 !important;
+}
+/* reset buuton */
+.gsib_b {
+    display: none;    
+}
+
+/* Search Button */
+
+.gsc-search-box-tools .gsc-search-box td.gsc-search-button {
+    padding: 0;
+}
+input.gsc-search-button-v2 {
+    background-color: {{ SSEButtonColor }} !important;
+    background-image: url("http://cdn2.hubspot.net/hubfs/370601/blog/search-icon-white-one-md.png") !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: 24px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+input.gsc-search-button-v2 {
+    height: 38px !important;
+    padding: 0 27px !important;
+    margin-top: 0 !important;
+    cursor: pointer;
+}
+input.gsc-search-button {
+    margin-left: 0 !important;
+}
+input.gsc-search-button[type="button" i] {
+    -webkit-appearance: initial !important;
+    padding: initial !important;
+    background-color: initial !important;
+    border: initial !important;
+}
+
+/* Listing AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA */
+
+/* Listing font styling */
+.gs-snippet {
+    word-wrap: break-word;
+    background: #f4f3f3;
+    font: 100%/1.618em {{ SSEfontFamily }};
+    display: block;
+    font-size: {{ SSESizeDescription }};
+    font-style: {{ SSEDescriptionStyle }};
+    background: transparent;
+    color: #555 !important;
+}
+
+/* Google Custom Search highlights matching words in bold, toggle that */
+.gs-snippet b {
+    font-weight: normal;
+}
+
+/* Add a border between individual search results */
+.gs-webResult {
+    border-bottom: 1px solid {{ SSEPagination }};
+    padding: 3px 0 21px;
+}      
+
+/* Change the font size of the title of search results */
+.gs-title, .gs-title b {
+    margin: 0 0 .4em;
+    font-size: {{ SSESizeTitle }} !important;
+    line-height: 1.25 !important;
+    font-weight: 300 !important;
+    font-family: {{ SSEfontFamily }} !important;
+}
+a.gs-title { 
+    color: {{ SSETitleColor }} !important;
+    outline: none;
+    text-decoration: none !important;
+}
+.gs-webResult.gs-result div.gs-title:hover {
+    border-bottom: 5px solid #000;
+}
+.gs-title b {
+    color: {{ SSETagsColor }} !important;
+    outline: none;
+}
+
+/* Do no display the URL of web pages in search results */
+.gsc-url-top, .gsc-url-bottom {
+    display: none;
+}
+.gs-webResult div.gs-visibleUrl {
+    color: #999 !important;
+    display: none !important;
+}
+/* Highlight the pagination buttons at the bottom of search results */
+.gsc-cursor-page {
+    font-size: 1.5em;
+    padding: 4px 8px;
+    border: none solid #ccc;
+    background-color: #CECECE !important;
+    color: white !important;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+    background-color: {{ SSEButtonColor }} !important;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page:hover {
+    background-color: {{ SSEPaginationHover }} !important;
+    text-decoration: none !important;
+}
+
+/* Remove underline */
+.gs-result .gs-title, .gs-result .gs-title * {
+    text-decoration: none!important;
+}
+ 
+.gsc-selected-option-container {
+    color: white !important;
+    background: {{ SSEButtonColor }} !important;
+    border-radius: 0 !important;
+    border: 0px solid {{ SSEButtonColor }} !important;
+    min-width: 90px !important;
+}
+@media (max-width: 767px) {
+    .gs-webResult.gs-result div.gs-title:hover {
+        border-bottom: 0px solid #000;
+    }
+}
+@media (max-width: 479px) {
+    .gs-title, .gs-title b {
+        font-size: 16px !important;
+    }
+    .gs-snippet {
+        font-size: 14px !important;
+    }
+    .gsc-cursor-page {
+        font-size: 1em;
+        width: 20%;
+        height: 40px;
+        float: left;
+        margin: 0 !important;
+        text-align: center;
+        border: 1px solid white !important;
+        display: table-cell;
+        vertical-align: middle !important;
+        padding-top: 13px;
+        padding-bottom: 0;
+        box-sizing: border-box;
+    }
+    .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+        border-color:none !important;
+    }
+}
