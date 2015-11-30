@@ -1,0 +1,1258 @@
+/*
+  sssssss     MM       MM       MM       MM        VV            VV         2222222
+ss           MM  MM  MM MM     MM  MM  MM MM       VV            VV        22     22
+ss           MM    MM   MM     MM    MM   MM        VV          VV        22       22
+  ssss       MM         MM     MM         MM         VV        VV          22      22
+      ss     MM         MM     MM         MM          VV      VV                  22
+       ss    MM         MM     MM         MM           VV    VV                  22
+      ss     MM         MM     MM         MM            VV  VV                 22
+ssssss       MM         MM     MM         MM             VVV                222222222
+*/
+
+
+/* @import url('http://example.com/example_style.css'); */
+
+/***********************************************/
+/* CSS @imports must be at the top of the file */
+/* Add them above this section                 */
+/***********************************************/
+
+/****************************************/
+/* HubSpot Style Boilerplate            */
+/****************************************/
+
+/* These includes are optional, but helpful. */
+{% include "hubspot/styles/responsive/modules.css" %}
+{% include "hubspot/styles/patches/recommended.css" %}
+
+
+/*****************************************/
+/* Start your style declarations here    */
+/*****************************************/
+/** 
+ * Box Sizing
+ * 
+ * Applies a natural box layout model to all elements so that width and padding 
+ * are essentially combined, making responsive styles easier to manage.
+ */
+
+
+/*****************************************/
+/* Bootstrap Reset (Only if BootStrap is installed) */
+/*****************************************/
+div.close, span.close, a.close {
+    opacity: initial ;
+    text-shadow: initial;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+} 
+
+/* ===============================================================================================
+   STRUTO MENU MODULE INTEGRATION (SMM V1) WITH HUBSPOT MENU
+   ===============================================================================================
+   =============================================================================================== */
+
+/* ==========================================================================
+   Custom Menu Primary
+   ========================================================================== */
+   
+/* Logo setting XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+  {% set SMMLogoBg                  = "#181815" %} /* Logo background color */
+  
+/* Desktop Extra Button XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+  {% set SMMDesktopExtraButton      = "block" %} /* Set value none or block when using this button */
+
+/* General menu setting XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+  {% set SMMWrapperHeight           = "60px" %}  /* The same height goes for Menu ul and Header (.smm-header-wrapper) */  
+  {% set SMMfontFamily              = "'Open Sans', sans-serif" %} /* Set menu font color for menu bar */
+  {% set SMMfontWeight              = "400" %} /* Set menu font weight for menu bar */
+  {% set SMMmenuBg                  = "rgb(48, 158, 214)" %} /* Set ul background color */
+  {% set SMMWrapperBorder           = "0px solid rgb(212, 212, 212)" %} /* Set Main Menu Header Border Bottom to 1px or 0 for none */
+  
+  /* Desktop parent setting */
+  {% set SMMulColor                 = "transparent" %} /* Set ul background color */
+  {% set SMMliColor                 = "transparent" %} /* Set li background Color */
+  {% set SMMliColorHover            = "rgb(36, 114, 154)" %} /* Set li background Color */
+  {% set SMMliColorActive           = "rgb(36, 114, 154)" %} /* Set li background Color */
+  {% set SMMaColor                  = "white" %} /* Set link Color */
+  {% set SMMaColorHover             = "white" %} /* Set link Hover Color */
+  {% set SMMfontSizeDesktop         = "14px" %} /* Set menu font weight for menu bar */
+  {% set SMMliBorder                = "rgba(255, 255, 255, 0.298039)" %}  /* Set border left to the menu item */
+  {% set SMMDesktopCTAColor         = "rgb(221,78,12)" %}  /* Set border left to the menu item */
+  
+   /* Desktop child list color setting */
+  {% set SMMulColorChild            = "transparent" %} /* Set ul background color */
+  {% set SMMliColorChild            = "rgb(36, 114, 154)" %} /* Set li background Color */
+  {% set SMMliColorHoverChild       = "rgb(48, 158, 214)" %} /* Set li background Color */
+  {% set SMMaColorChild             = "white" %} /* Set link Color */
+  {% set SMMaColorHoverChild        = "white" %} /* Set link Hover Color */
+  {% set SMMfontSizeDesktopChild    = "14px" %} /* Set menu font weight for menu bar */
+  {% set SMMHeightChild             = "50px" %} /* Set child height */
+  
+  /* Set both value for Desktop Child Dropdown Position Push to left or centered */
+  {% set SMMPositionChildA          = "50%" %} /* Set dropdown position 50% for left or 1% for centered */
+  {% set SMMPositionChildB          = "90px" %} /* Set dropdown position 90px for left or 0px for centered */
+
+  {% set SMMBorderChild             = "0px solid #f5f5f5" %} /* Set menu font weight for menu bar */
+  {% set SMMBorderBottomChild       = "1px solid rgba(255, 255, 255, 0.298039)" %} /* Set menu font weight for menu bar */
+
+  /* Mobile Menu setting ***************/
+  /* Hamburger Menu setting */
+  {% set SMMHeightMobile            = "60px" %} /* Set Mobile Bar height */
+  {% set SMMTriggerColor            = "rgb(153, 153, 153)" %} /* Hamburger Background*/
+  {% set SMMTriggerColorHover       = "#c8c8c8" %}  /* Hamburger Background hover*/
+  {% set SMMFontSizeMobileTrigger   = "16px" %} /* Set the Hamburger(mobile-trigger) font-size */
+  
+  /* Mobile Dropdown setting */
+  {% set SMMmenuColorMobile         = "rgb(0, 137, 208)" %} /* Set Mobile Menu Background Color */
+  {% set SMMmenuColorMobileHover    = "white" %} /* Set background link hover Color */
+  {% set SMMaColorMobile            = "white" %} /* Set link Color */
+  {% set SMMaColorHoverMobile       = "rgb(36, 140, 199)" %} /* Set link Hover Color */
+  {% set SMMfontSizeMobile          = "14px" %} /* Set menu font weight for menu bar */
+  {% set SMMTextAlignMobile         = "center" %} /* Set align on the menu item */
+  {% set SMMExtraButtonMobile       = "none" %} /* Set button none to hide or block to display */
+  
+    /* Mobile child color setting */
+  {% set SMMmenuColorMobileChild         = "white" %} /* Set Mobile Menu Background Color */
+  {% set SMMmenuColorMobileChildHover    = "rgb(246, 246, 246)" %}
+  {% set SMMaColorMobileChild            = "white" %} /* Set Link Color */
+  {% set SMMaColorHoverMobileChild       = "rgb(36, 140, 199)" %} /* Set Link Hover Color */
+  {% set SMMfontSizeMobileChild          = "14px" %} /* Set menu font weight for menu bar */
+  {% set SMMHeightMobileChild            = "50px" %}
+  {% set SMMTextAlignMobileChild         = "center" %}
+ 
+
+
+/* Other menu setting XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/* Close Icon on mobile *************/
+@font-face {
+    font-family: "Flaticon";
+	src: url("http://cdn2.hubspot.net/hubfs/165931/smm_menu/SMM_Images/flaticon.eot");
+	src: url("http://cdn2.hubspot.net/hubfs/165931/smm_menu/SMM_Images/flaticon.eot#iefix") format("embedded-opentype"),
+	url("http://cdn2.hubspot.net/hubfs/165931/smm_menu/SMM_Images/flaticon.woff") format("woff"),
+	url("http://cdn2.hubspot.net/hubfs/165931/smm_menu/SMM_Images/flaticon.ttf") format("truetype"),
+	url("http://cdn2.hubspot.net/hubfs/165931/smm_menu/SMM_Images/flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+    font-size: 30px;
+    font-style: normal;
+}
+.flaticon-close6:before {
+	content: "\e000";
+}
+.smm-item-close i.flaticon-close6 {
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
+.smm-item-close a:hover {
+    background: transparent !important;
+}
+
+/* Animation AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA */
+
+/* Menu AAAAAAAAAAAAAAAAAAAAA */
+
+.widget-span.smm-master-header {
+    width: 100%;
+    -webkit-animation: mymove 0.2s; /* Chrome, Safari, Opera */
+    animation: mymove 0.2s;
+} 
+/* Chrome, Safari, Opera */
+
+.widget-span.smm-master-header {-webkit-animation-timing-function: linear;}
+
+/* Standard syntax */
+
+.widget-span.smm-master-header  {animation-timing-function: linear;}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    from {top: -60px;}
+    to {top: 0;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    from {top: -60px;}
+    to {top: 0;}
+}
+
+/*.nav-up { top: -60px; }*/
+
+
+
+
+/*Menu Scroll Display transitions*/
+/* UPDATE EXISTING STYLE */
+.nav-up{
+    transform: translateY(-{{ SMMWrapperHeight }});
+    -ms-transform: translateY(-{{ SMMWrapperHeight }});
+    -o-transform: translateY(-{{ SMMWrapperHeight }});
+    -webkit-transform: translateY(-{{ SMMWrapperHeight }});
+
+    -o-transition-duration: 0.2s;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+@media (max-width: 767px) {
+    .nav-up{
+        transform: translateY(-{{ SMMHeightMobile }});
+        -ms-transform: translateY(-{{ SMMHeightMobile }});
+        -o-transform: translateY(-{{ SMMHeightMobile }});
+        -webkit-transform: translateY(-{{ SMMHeightMobile }});   
+    }
+}
+/* ADD NEW STYLE */
+.nav-down{
+    transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -o-transform: translateY(0px);
+
+    -o-transition-duration: 200ms;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+body.mobile-open .smm-master-header.nav-up {
+     transform: translateY(0px) !important;
+    -ms-transform: translateY(0px) !important;
+    -webkit-transform: translateY(0px) !important;
+    -o-transform: translateY(0px) !important;
+
+    -o-transition-duration: 200ms !important;
+    -webkit-transition-duration: 0.2s !important;
+    -moz-transition-duration: 0.2s !important;
+    transition-duration: 0.2s !important;
+}
+
+
+
+/* Mobile Menu Toggle Animation */
+
+@-webkit-keyframes topline {
+  50%  {-webkit-transform: translateY(4.8px); transform:translateY(4.8px); }
+  100% { margin-top:0; -webkit-transform: rotate(45deg); transform:rotate(45deg);}
+}
+@-moz-keyframes topline {
+  50%  {-webkit-transform: translateY(4.8px); transform:translateY(4.8px); }
+  100% { margin-top:0; -webkit-transform: rotate(45deg); transform:rotate(45deg);}
+}
+@-o-keyframes topline {
+  50%  {-webkit-transform: translateY(4.8px); transform:translateY(4.8px); }
+  100% { margin-top:0; -webkit-transform: rotate(45deg); transform:rotate(45deg);}
+}
+@keyframes topline {
+  50%  {-webkit-transform: translateY(4.8px); transform:translateY(4.8px); }
+  100% { margin-top:0; -webkit-transform: rotate(45deg); transform:rotate(45deg);}
+}
+
+@-webkit-keyframes bottomline {
+  50%  {-webkit-transform: translateY(-4.8px); transform:translateY(-4.8px); }
+  100% { margin-top:0; -webkit-transform: rotate(-45deg); transform:rotate(-45deg);}
+}
+@-moz-keyframes bottomline {
+  50%  {-webkit-transform: translateY(-4.8px); transform:translateY(-4.8px); }
+  100% { margin-top:0; -webkit-transform: rotate(-45deg); transform:rotate(-45deg);}
+}
+@-o-keyframes bottomline {
+  50%  {-webkit-transform: translateY(-4.8px); transform:translateY(-4.8px); }
+  100% { margin-top:0; -webkit-transform: rotate(-45deg); transform:rotate(-45deg);}
+}
+@keyframes bottomline {
+  50%  {-webkit-transform: translateY(-4.8px); transform:translateY(-4.8px); }
+  100% { margin-top:0; -webkit-transform: rotate(-45deg); transform:rotate(-45deg);}
+}
+
+
+.mobile-open a.mobile-trigger i:before {
+    -webkit-animation:topline 0.3s ease-in-out;
+    -moz-animation:topline 0.3s ease-in-out;
+    animation:topline 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards; 
+    -webkit-animation-fill-mode: forwards;
+}
+.mobile-open a.mobile-trigger i:after {
+     -webkit-animation:bottomline 0.3s ease-in-out;
+    -moz-animation:bottomline 0.3s ease-in-out;
+    animation:bottomline 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards; 
+    -webkit-animation-fill-mode: forwards;
+}
+
+
+
+.header-container-wrapper .widget-span {
+    min-height: initial;
+}
+.widget-span.smm-master-header {
+    display: none;
+    position: fixed;
+    width:100%;
+    z-index:999999;
+}
+
+/* Hide transported menu */
+#smm-transport .header-container-wrapper {
+    display: none !important;
+}
+.smm-header-wrapper .widget-span {
+    width: auto !important;
+    margin-left: initial !important;
+    
+}
+.smm-header-wrapper {
+    background-color: {{ SMMmenuBg }};
+    font-family: {{ SMMfontFamily }};
+    font-weight: {{ SMMfontWeight }};
+    height: {{ SMMWrapperHeight }}; /* calc( {{ SMMWrapperHeight }} + 1px ); */
+    border-bottom: {{ SMMWrapperBorder }};
+}
+.smm-footer-script {
+    display: none !important;
+}
+.st-struto-logo img {
+    padding: 0 10px;
+    height: {{ SMMWrapperHeight }};
+    width: initial !important;
+}
+.smm-menu-wrapper {
+    margin-left: 0 !important;
+    
+}
+.smm-header-wrapper .smm-left {
+    float: left !important;
+    width: initial;
+}
+.smm-right-corner {
+    float: left;
+}
+.smm-desktop-menu .hs-menu-wrapper.hs-menu-flow-horizontal>ul,
+.smm-header-wrapper .smm-right {
+    float: right !important;
+    width: initial;
+}
+.hs-menu-wrapper.hs-menu-flow-horizontal>ul:last-child {
+    
+}
+.st-struto-logo .hs_cos_wrapper_type_linked_image {
+    display: table-cell;
+    vertical-align: middle;
+    height: {{ SMMWrapperHeight }}; 
+    background-color: {{ SMMLogoBg }};
+}
+.st-struto-logo {
+    width: calc( 100% + 20px );
+}
+
+ul.hs-menu-children-wrapper.smm-bucket ul {
+    display: none;
+}
+.smm-header-wrapper .smm-desktop-menu {
+    float: left;
+}
+
+.smm-header-wrapper a.cta_button {
+    height:  {{ SMMWrapperHeight }} !important; /* {{ SMMWrapperHeight }} */
+}
+.smm-cta {
+    background: {{ SMMDesktopCTAColor }};
+    height: {{ SMMWrapperHeight }} !important;
+}
+.mobile-extra-right-button {
+    display: none !important;
+}
+
+/************* More Target *************************/
+
+.smm-target-menu-item:last-child {
+        display: none;
+}
+@media (max-width: 1500px) {
+    .smm-target-menu-item:last-child {
+        display: block;
+    }
+    .smm-target-menu-item:last-child > li.hs-menu-item:last-child {
+        display: none;
+    }
+}
+ul.smm-bucket>li:last-child {
+    display: none;
+}
+
+/* Reset display */
+@media (min-width: 768px) {
+    .smm-header-wrapper .smm-right-corner {
+        display: {{ SMMDesktopExtraButton }};
+    }
+    
+    .smm-header-wrapper .smm-desktop-menu {
+        display: block;
+    }
+   
+    .smm-header-wrapper .smm-mobile-menu {
+        display: none;
+    }
+}
+
+/* Show Mobile and hide desktop menu */
+@media (max-width: 767px) {
+    .mobile-search-icon {
+        cursor: pointer;
+    }
+    .smm-header-wrapper .smm-right-corner,
+    .smm-header-wrapper .smm-desktop-menu {
+        display: none;
+    }
+   
+    .smm-header-wrapper .smm-mobile-menu {
+        display: block;
+    }
+
+     .mobile-extra-right-button {
+        display: block !important;
+        right: 115px;
+        top: 4px;
+        position: relative;
+     }
+    .st-struto-logo .hs_cos_wrapper_type_linked_image,
+    .smm-header-wrapper {
+        height: {{ SMMHeightMobile }} ;   
+    }
+    
+    .st-struto-logo img {
+       height: {{ SMMHeightMobile }};
+    }
+    
+    .smm-mobile-menu .hs-menu-wrapper ul:first-child { 
+        
+        height: auto;
+        overflow-x: hidden !important;
+        /*overflow: -moz-scrollbars-none;*/
+        direction: rtl;
+    }
+    
+    /* .smm-mobile-menu .hs-menu-wrapper ul::-webkit-scrollbar { display: none !important; } */
+    
+    .smm-mobile-menu .hs-menu-wrapper ul::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    .smm-mobile-menu .hs-menu-wrapper ul::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+        border-radius: 10px;
+        background-color: {{ SMMTriggerColor }};
+    }
+    
+    .smm-mobile-menu .hs-menu-wrapper ul::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    }
+    
+    @-moz-document url-prefix(http://),url-prefix(https://) {
+        scrollbar {
+           -moz-appearance: none !important;
+           background: rgb(0,255,0) !important;
+        }
+        thumb,scrollbarbutton {
+           -moz-appearance: none !important;
+           background-color: rgb(0,0,255) !important;
+        }
+        
+        thumb:hover,scrollbarbutton:hover {
+           -moz-appearance: none !important;
+           background-color: rgb(255,0,0) !important;
+        }
+        
+        scrollbarbutton {
+           display: none !important;
+        }
+        
+        scrollbar[orient="vertical"] {
+          min-width: 15px !important;
+        }
+    }
+    
+}
+
+@media (max-width: 479px) { 
+    .mobile-extra-right-button {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   Desktop Menu
+   ========================================================================== */
+   
+/* Parent List XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+.custom-menu-primary.smm-desktop-menu .hs-menu-wrapper > ul{ 
+  background-color:{{ SMMulColor }};
+}
+.custom-menu-primary.smm-desktop-menu .hs-menu-wrapper > ul > li{
+  background:{{ SMMliColor }};
+  border-left: 1px solid {{ SMMliBorder }};
+}
+.custom-menu-primary.smm-desktop-menu .hs-menu-wrapper > ul > li.active {
+    /* background: {{ SMMliColorHover }} !important; */
+}
+
+/********************************************************************************************************/
+
+/*Menu Item Hover Colour Transition*/
+/* UPDATE EXISTING STYLE */
+.custom-menu-primary.smm-desktop-menu .hs-menu-wrapper > ul > li:hover{
+    background:{{ SMMliColorHover }};
+    -webkit-transition-duration: 200ms;
+    -moz-transition-duration: 200ms;
+    -o-transition-duration: 200ms;
+    transition-duration: 200ms;
+}
+
+/********************************************************************************************************/
+
+
+.custom-menu-primary.smm-desktop-menu .hs-menu-wrapper > ul > li > a:link,
+.custom-menu-primary.smm-desktop-menu .hs-menu-wrapper > ul > li > a{
+  color:{{ SMMaColor }};
+  font-size: {{ SMMfontSizeDesktop }};
+  display: table-cell;
+  padding: 0 20px;
+  height: {{ SMMWrapperHeight }};
+  vertical-align: middle;
+}
+.custom-menu-primary.smm-desktop-menu .hs-menu-wrapper > ul > li.active > a {
+    background: {{ SMMliColorActive }};
+    color: {{ SMMaColorHover }};
+}
+
+.custom-menu-primary.smm-desktop-menu .hs-menu-wrapper > ul > li > a:hover{
+  color: {{ SMMaColorHover }};
+}
+
+.smm-header-wrapper .custom-menu-primary.smm-desktop-menu li.hs-item-has-children:hover > a {
+    color: {{ SMMaColorHover }};
+}
+
+.smm-desktop-menu .hs-menu-flow-horizontal {
+    font-size: 0;
+}
+
+/* Child List XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+.smm-desktop-menu .hs-menu-wrapper.hs-menu-flow-horizontal>ul li.hs-item-has-children:last-child ul.hs-menu-children-wrapper {
+    left: initial;
+    margin-left:0;
+    right:0;
+}
+
+
+
+/*Child Item Display transition*/
+/* ADD NEW STYLE */
+.hs-menu-wrapper.hs-menu-flow-horizontal > ul li.hs-item-has-children:hover > ul.hs-menu-children-wrapper {
+    opacity: 1;
+    transition-duration: 200ms;
+    -o-transition-duration: 200ms;
+    -webkit-transition-duration: 200ms;
+    -moz-transition-duration: 200ms;
+    visibility: visible;
+}
+
+/********************************************************************************************************/
+
+
+
+.smm-desktop-menu .hs-menu-wrapper.hs-menu-flow-horizontal>ul li.hs-item-has-children ul.hs-menu-children-wrapper {
+    left: calc(50% - {{ SMMPositionChildA }});
+    margin-left: calc({{SMMPositionChildB}} - 90px);
+    width: 180px;
+    text-align: center;
+}
+
+.hs-menu-wrapper.hs-menu-flow-horizontal>ul li.hs-item-has-children ul.hs-menu-children-wrapper li.hs-item-has-children ul.hs-menu-children-wrapper {
+    left: initial;
+    right: 180px !important;
+}
+
+
+/*Child Hover Colour Transition*/
+/*UPDATE EXISTING STYLE*/
+.custom-menu-primary.smm-desktop-menu .hs-menu-wrapper > ul ul li:hover{
+    background:{{ SMMliColorHoverChild }};
+    -o-transition-duration: 0.2s;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+/*UPDATE EXISTING STYLE*/
+.custom-menu-primary.smm-desktop-menu .hs-menu-wrapper > ul ul li a:link,
+.custom-menu-primary.smm-desktop-menu .hs-menu-wrapper > ul ul li a{
+  color:{{ SMMaColorChild }};
+  font-size: {{ SMMfontSizeDesktopChild }};
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+
+.custom-menu-primary.smm-desktop-menu .hs-menu-wrapper > ul ul li a{
+    
+    max-height: 100%;
+    height: {{ SMMHeightChild }};
+    padding: calc( {{ SMMHeightChild }} / 2 - {{ SMMfontSizeDesktopChild }} / 2 ) 20px 10px ;
+    vertical-align: middle; 
+}
+
+/********************************************************************************************************/
+
+
+.custom-menu-primary.smm-desktop-menu .hs-menu-wrapper > ul ul li{
+  background:{{ SMMliColorChild }};
+  border-right: {{ SMMBorderChild }};
+  border-bottom: {{ SMMBorderBottomChild }};
+  border-left: {{ SMMBorderChild }};
+}
+
+.custom-menu-primary.smm-desktop-menu .hs-menu-wrapper > ul ul ul {
+    border: {{ SMMBorderBottomChild }};
+}
+
+.custom-menu-primary.smm-desktop-menu .hs-menu-wrapper > ul ul li a:hover{
+  color:{{ SMMaColorHoverChild }};
+}
+
+.custom-menu-primary.smm-desktop-menu .hs-menu-wrapper > ul ul ul {
+    margin-left: 0 !important;
+}
+
+.custom-menu-primary.smm-desktop-menu ul ul li.hs-item-has-children .fa-angle-down {
+    transform: translate(-80px, -6px);
+    top: 40%;
+}
+.custom-menu-primary.smm-desktop-menu ul ul li.hs-item-has-children .fa-angle-down:before {
+    content: "\f104";
+}
+
+/* Template Dropdown arrow  float to right *******************************************
+.custom-menu-primary.smm-desktop-menu ul li.hs-item-has-children span.fa {
+    position: absolute;
+    font-size: 20px;
+    color: whitesmoke;
+    right: 15px;
+    top: 20px;
+}
+.custom-menu-primary.smm-desktop-menu ul li.hs-item-has-children > a {
+    padding-right: 40px !important;
+}
+*/
+
+/* Template Dorpdown arrow at the bottom centered  ***********************************/
+.custom-menu-primary.smm-desktop-menu ul li.hs-item-has-children span.fa {
+    position: absolute;
+    font-size: 20px;
+    color: whitesmoke;
+    right: 0;
+    left: 0;
+    bottom: 2px;
+    text-align: center;
+}
+
+.hs-menu-wrapper.hs-menu-flow-horizontal>ul li.hs-item-has-children ul.hs-menu-children-wrapper li a {
+    white-space: normal;
+    text-align: left;
+}
+
+/* More Item Auto Button hidden if does not have child */ 
+
+
+/* Override max width on menu links */
+.custom-menu-primary .hs-menu-wrapper > ul li a, 
+.hs-menu-wrapper.hs-menu-flow-horizontal > ul li.hs-item-has-children ul.hs-menu-children-wrapper li a {
+  overflow: visible !important;
+  max-width: none !important;
+  width: auto !important;
+}
+
+/* Fix menu disappearing on desktop after toggling mobile menu */
+@media screen and (min-width:768px) {
+    .custom-menu-primary .hs-menu-wrapper { 
+        display:block !important;
+    }
+}
+
+
+
+
+/* ==========================================================================
+   Mobile Menu - Hubspot Standard Toggle Menu
+   ========================================================================== */
+
+
+/**
+ * Special Note
+ *
+ * When the menu is open, a class of .mobile-open is applied to the body. You can 
+ * use this for custom styling on any element when the menu is in the open position.                     
+ */
+
+@media (min-width: 768px){
+
+  a.mobile-trigger, a.child-trigger {
+      display: none !important; /* Hide button on Desktop */
+  }
+  
+      /* Override */
+    .hs-menu-wrapper.hs-menu-flow-horizontal ul {
+        display: initial !important;
+    }
+      
+}
+
+@media (max-width: 767px){   
+
+  /* Menu Reset - Remove styling from desktop version of custom-menu-primary */
+  /* Place any additional CSS you want removed from the mobile menu in this reset */
+  .custom-menu-primary, .custom-menu-primary *{
+    display: block;
+    float: none;
+    position: static;
+    top: auto;
+    right: auto;
+    left: auto;
+    bottom: auto;
+    padding: 0px;
+    margin: 0px;
+    background-image: none;
+    background-color: transparent;
+    border: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow:    none;
+    box-shadow:         none; 
+    max-width: none;
+    width: 100%;
+    height: auto;
+    line-height: 1;  
+    font-weight: normal;
+    text-decoration: none;
+    text-indent: 0px;
+    text-align: left;
+    color: {{SMMaColorMobile}};
+    }
+
+    .hs-menu-wrapper.hs-menu-flow-horizontal>ul {
+        display: block !important;
+    }
+    .hs-menu-wrapper.hs-menu-flow-horizontal>ul li.hs-menu-depth-1 {
+    float: none;
+    }
+    
+  /* Toggle Button
+     ========================================================================== */
+
+  a.mobile-trigger {
+      display: table-cell !important; /* Hide button on Desktop */
+      cursor: pointer; /* Mouse pointer type on hover */
+      position: absolute; /*******************************************/
+      top: 0px;          /* Position Button at top right of screen  */
+      right: 0;        /*******************************************/
+      width: auto; /* Button width */
+      height:  {{ SMMHeightMobile }}; /* Button height */      
+      padding: calc({{SMMHeightMobile}}/2 - {{SMMFontSizeMobileTrigger}}/2) 10px 0;
+      vertical-align: middle;
+      background: {{ SMMTriggerColor }}; /* Background color */
+      z-index: 99999999999; /* Z-index to keep button on top of other layers */
+      -webkit-transition: background-color 0.2s linear; /* Button color transition effect */
+      font-size: {{ SMMFontSizeMobileTrigger }};
+      font-weight: normal;
+      text-align: left;
+      text-transform: uppercase;
+      -webkit-border-bottom-right-radius: 0px;
+      -webkit-border-bottom-left-radius: 0px;
+      -moz-border-radius-bottomright: 0px;
+      -moz-border-radius-bottomleft: 0px;
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      -webkit-transition:color .2s ease-in; 
+      -moz-transition:color .2s ease-in;
+      transition:color .2s ease-in;
+      opacity: 1;
+  }
+
+  a.mobile-trigger:hover {
+      text-decoration: none; /* Removes link text underline on button */
+      color: {{ SMMaColorHoverMobile }};
+      opacity: 1;
+  }
+
+  a.mobile-trigger span{
+      display: inline;
+  }
+
+  a.mobile-trigger span:before{
+      position: absolute;
+      content: 'Menu'; /* Change the text on the closed toggle button */
+  }
+
+  a.mobile-trigger span:after{
+      position: relative;
+      right: 2px;
+      content: 'Close'; /* Change the text on the open toggle button */
+      background-color: {{ SMMTriggerColorHover }} /* {{ SMMTriggerColorHover }} */;
+      opacity: 0;
+      /*
+      transition: opacity .4s ease-in-out;
+      -moz-transition: opacity .4s ease-in-out;
+      -webkit-transition: opacity .4s ease-in-out; 
+      */
+  }
+
+  /* Change button when menu is open */
+  .mobile-open a.mobile-trigger{
+     
+      background-color: {{ SMMTriggerColorHover }};
+      /*  background: transparent; Changes button background to be slightly darker than open menu color */  
+  }
+
+  .mobile-open a.mobile-trigger span:after{
+     opacity: 1; 
+  }
+
+
+  /* Toggle Button Icon & Animations
+     ========================================================================== */
+
+  a.mobile-trigger i {
+      display: inline;
+      position: relative;
+      top: -5px;
+      margin-left: 5px;
+      -webkit-transition-duration: 0s;
+      -webkit-transition-delay: .2s;
+      -moz-transition-duration: 0s;
+      -moz-transition-delay: .2s;
+      transition-duration: 0s;
+      transition-delay: .2s;
+  }
+  a.mobile-trigger  i:before, a.mobile-trigger i:after {
+      position: absolute;
+      content: '';
+  }
+  a.mobile-trigger  i, a.mobile-trigger  i:before, a.mobile-trigger  i:after {
+      width: 15px; /* Icon line width */
+      height: 2px; /* Icon line height */
+      background-color: {{ SMMaColorMobile }}; /* Icon color */
+      display: inline-block;
+  }
+  a.mobile-trigger  i:before {
+      margin-top: -6px; /* Position top line */
+      -webkit-transition-property: margin, -webkit-transform;
+      -webkit-transition-duration: .2s;
+      -webkit-transition-delay: .2s, 0;
+  }
+  a.mobile-trigger  i:after {
+      margin-top: 6px; /* Position bottom line */
+      -webkit-transition-property: margin, -webkit-transform;
+      -webkit-transition-duration: .2s;
+      -webkit-transition-delay: .2s, 0;
+  }
+  .mobile-open a.mobile-trigger i {
+      background-color: rgba(0,0,0,0.0);
+      -webkit-transition-delay: .2s;
+      -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0);
+      -moz-box-shadow:    0px 1px 1px rgba(0, 0, 0, 0);
+      box-shadow:         0px 1px 1px rgba(0, 0, 0, 0);
+  }
+  /*
+  .mobile-open a.mobile-trigger i:before {
+      margin-top: 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      -webkit-transition-delay: 0, .2s;
+      -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0);
+      -moz-box-shadow:    0px 1px 1px rgba(0, 0, 0, 0);
+      box-shadow:         0px 1px 1px rgba(0, 0, 0, 0);
+  }
+  .mobile-open a.mobile-trigger i:after {
+      margin-top: 0;
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-transition-delay: 0, .2s;
+      -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0);
+      -moz-box-shadow:    0px 1px 1px rgba(0, 0, 0, 0);
+      box-shadow:         0px 1px 1px rgba(0, 0, 0, 0);
+  }
+  */
+
+  /* Child Toggle Button
+     ========================================================================== */
+
+  a.child-trigger {
+      display: block !important; /* Hide button on Desktop */
+      cursor: pointer; /* Mouse pointer type on hover */
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 55px !important; /* Button width */
+      min-width: 55px !important;
+      height: 45px !important; /* Button height */  
+      padding: 0 !important;
+      border-left: 1px dotted rgba(255, 255, 255, .20) !important;
+  }
+  a.child-trigger:hover {
+      text-decoration: none;
+     
+  }
+
+
+  /* Child Toggle Button Icon & Animations
+     ========================================================================== */
+
+  a.child-trigger span {
+      position: relative;
+      top: 50%; /* Centers icon inside button */
+      margin: 0 auto !important;
+      -webkit-transition-duration: .2s;
+      -moz-transition-duration: .2s;
+      transition-duration: .2s;
+  }
+  a.child-trigger span:after {
+      position: absolute;
+      content: '';
+  }
+  a.child-trigger span, a.child-trigger span:after {
+      width: 10px; /* Icon line width */
+      height: 1px; /* Icon line height */
+      background-color: {{ SMMaColorMobile }}; /* Icon color */
+      display: block;
+  }
+  a.child-trigger span:after {
+      -webkit-transform: rotate(-90deg);
+       -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+       -webkit-transition-duration: .2s;
+       -moz-transition-duration: .2s;
+      transition-duration: .2s;
+  }
+  a.child-trigger.child-open span:after {
+      -webkit-transform: rotate(-180deg);
+       -ms-transform: rotate(-180deg);
+      transform: rotate(-180deg);
+       -webkit-transition-duration: .2s;
+       -moz-transition-duration: .2s;
+      transition-duration: .2s;
+  }
+  a.child-trigger.child-open span {
+      -webkit-transform: rotate(180deg);
+       -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+       -webkit-transition-duration: .2s;
+       -moz-transition-duration: .2s;
+      transition-duration: .2s;
+  }
+
+    
+  /* Menu Styles on Mobile Devices
+     ========================================================================== */  
+
+
+  /* Hide menu on mobile */
+  .custom-menu-primary.js-enabled .hs-menu-flow-horizontal,
+  .custom-menu-primary.js-enabled .hs-menu-children-wrapper{
+      display: none;
+  }  
+
+  /* Make child lists appear below parent items */
+  .custom-menu-primary ul.hs-menu-children-wrapper {
+      visibility: visible !important;
+      opacity: 1 !important;
+      position: static !important;
+      display: none;
+  }
+
+  /* Mobile Menu Styles */
+  .custom-menu-primary.js-enabled .hs-menu-flow-horizontal{
+      position: absolute; /**************************************************************/
+      top: {{ SMMHeightMobile }};             /* Positions the menu to drop from the very top of the screen */
+      left: 0px;          /**************************************************************/                                              
+      width: 100%;   
+     
+  }
+  .custom-menu-primary .hs-menu-flow-horizontal{
+      padding: 0.01% 0 0 0; /* Padding to add room for close button */
+      /* Menu background color set off global mobile-SMMmenuColor variable */
+      width: 100%; /* Full screen width */
+      z-index: 8888;
+      background-color: rgba(0, 0, 0, 0.65);
+  }
+
+   /* Level 1 Menu List Styles */
+  .custom-menu-primary .hs-menu-flow-horizontal > ul > li{
+      position: relative;
+      text-align: {{ SMMTextAlignMobile }};
+   }
+   .custom-menu-primary .hs-menu-flow-horizontal > ul > li:last-child {
+       background-color: transparent;
+       border-bottom: 0 !important;
+   }
+   /* Only if you have an extra button at last second menu item ********************/
+   .custom-menu-primary .hs-menu-flow-horizontal > ul > li:nth-last-of-type(2) {
+        display: {{ SMMExtraButtonMobile }};
+        border-top: 1px solid rgb(212, 212, 212);
+        background-color: rgb(221,78,12);
+        background-image: none;
+        color: white;
+   }
+
+  .custom-menu-primary .hs-menu-flow-horizontal > ul > li a{
+      font-size: 22px; /* Font size of top level list items */
+      line-height: 45px;
+      overflow: visible;
+      display: block;
+      text-align: {{ SMMTextAlignMobile }};
+  }
+
+  /* Level 1 and Higher Menu List Styles */
+  .custom-menu-primary .hs-menu-flow-horizontal ul li{
+      border-bottom: 1px solid rgb(27, 158, 234); /* Adds transparent dark highlights to top of top level list items */
+      background-color: {{ SMMmenuColorMobile }};
+  }
+  .custom-menu-primary .hs-menu-flow-horizontal ul li a{
+      padding: 0 10px;
+      font-size: {{ SMMfontSizeMobile }};
+  }
+  .custom-menu-primary .hs-menu-flow-horizontal ul li a:first-child:hover{
+     /* color: {{ SMMaColorHoverMobile }}; */  /* link hover color set by global mobile-SMMaColorHover variable */
+     /* background-color: {{ SMMmenuColorMobileHover }};*/
+  }
+
+
+  /* Level 2 and Higher Menu List Styles */
+  .custom-menu-primary .hs-menu-flow-horizontal > ul ul li{
+     background-color: {{ SMMmenuColorMobileChild }};
+     border-bottom: 1px solid rgb(245, 245, 245);
+  }
+  .custom-menu-primary .hs-menu-flow-horizontal >ul ul li:hover {
+    /* background-color: {{ SMMmenuColorMobileChildHover }};*/
+  }
+  .custom-menu-primary .hs-menu-flow-horizontal > ul ul li a{
+      text-indent: 10px; /* Indent Child lists */
+      font-size: {{ SMMfontSizeMobile }}; /* Font size of child lists */
+      color: {{ SMMaColorHoverMobileChild }};
+  }
+  
+
+  /* Level 3 and Higher Menu List Styles */
+  .custom-menu-primary .hs-menu-flow-horizontal > ul ul ul li a{
+      text-indent: 30px; /* Indent Child lists */
+  }
+  .custom-menu-primary .hs-menu-flow-horizontal > ul ul ul ul li a{
+      text-indent: 50px; /* Indent Child lists */
+  }
+}
+
+@media screen and (max-width: 979px) {
+   
+    /* Show Mobile Menu Group */
+    
+    .desktop-menu-group{
+        display: initial !important; 
+    } 
+    
+}
+
+
+/* ==========================================================================
+   Header Quick Contact Styles
+   ========================================================================== */
+
+.quick-header-contact {
+    background-color: #424242;
+    border-bottom: 1px none #636363;
+    height: 20px;
+}
+
+.quick-header-contact p {
+    color: #bfbfbf !important;
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+    text-align: center;    
+}
+
+.quick-header-contact p a {
+    color: rgb(28, 107, 153);
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 767px) {
+    
+    /* Header Styling
+    ========================================================================== */
+    .quick-header-contact { 
+        display: none !important 
+    }
+    
+}
+/* =======================================================================================================================================
+   SMM GSSE SEARCH INTEGRATED
+=========================================================================================================================================*/
+
+.smm-header-wrapper .widget-span.desktop-search-icon {
+    width: 60px!important;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border-left: 1px solid {{ SMMliBorder }};
+    height: 60px;
+    color: white;
+    padding: calc({{SMMHeightMobile}}/2 - {{SMMFontSizeMobileTrigger}}/2) 10px 0;
+}
+.smm-header-wrapper .widget-span.desktop-search-icon:hover {
+    background: {{ SMMliColorHover }};
+}
+.smm-header-wrapper .widget-span.smm-sse-search {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    width: 40% !important;
+    margin: 0 auto !important;
+    display: none;
+}
+.desktop-search-icon {
+    cursor: pointer;
+}
+.smm-menu-wrapper.smm-sse-menu-close {
+    display: none;
+}
+.smm-header-wrapper .widget-span.smm-sse-search.smm-sse-open {
+    display: block;
+}
+.smm-header-wrapper .widget-span.smm-sse-search-box {
+    width: 100% !important;
+    display: block;
+}
+.smm-sse-open {
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Search Result Template */
+.smm-sse-result-template .mobile-search-icon-li,
+.smm-sse-result-template .widget-span.desktop-search-icon {
+    display: none;
+}
+.smm-sse-noscroll {
+    overflow: hidden;
+}
+/* =======================================================================================================================================
+  BROWSER TARGET CLASS
+=========================================================================================================================================*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+    
+    div.close, span.close, a.close {
+        opacity: auto;
+        text-shadow: auto;
+    }
+
+   .header-container-wrapper .widget-span {
+        min-height: auto;
+    }
+    .smm-header-wrapper .widget-span {
+        width: auto !important;
+        margin-left: auto !important;
+    }
+    .st-struto-logo img {
+        width: auto !important;
+    }
+
+    .smm-header-wrapper .smm-left {
+        width: auto;
+    }
+    .smm-desktop-menu .hs-menu-wrapper.hs-menu-flow-horizontal>ul,
+    .smm-header-wrapper .smm-right {
+        width: auto;
+    }
+    
+    /* Child List XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+    
+    .smm-desktop-menu .hs-menu-wrapper.hs-menu-flow-horizontal>ul li.hs-item-has-children:last-child ul.hs-menu-children-wrapper {
+        left: auto;
+    }
+    .hs-menu-wrapper.hs-menu-flow-horizontal>ul li.hs-item-has-children ul.hs-menu-children-wrapper li.hs-item-has-children ul.hs-menu-children-wrapper {
+        left: auto;
+    }
+}
+
+@media (min-width: 768px) {
+      /* Override */
+    _:-ms-input-placeholder, :root .hs-menu-wrapper.hs-menu-flow-horizontal ul {
+        display: inline !important;
+    }
+}
+
+@media screen and (max-width: 979px) {
+    /* Show Mobile Menu Group */
+    _:-ms-input-placeholder, :root .desktop-menu-group{
+        display: inline !important; 
+    }
+}
