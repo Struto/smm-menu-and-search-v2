@@ -1,0 +1,184 @@
+/* ==========================================================================
+   MENU SEARCH BOX WITH GOOLGE STRUTO SEARCH ENGINE EXTENDED VERSION 1
+   ==========================================================================
+   ========================================================================== */
+
+/* ==========================================================================
+   Settings
+   ========================================================================== */
+
+/* General menu setting XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+  {% set SSEfontFamily              = "Georgia, 'Times New Roman', Times, serif" %} /* Set menu font color for menu bar */
+  {% set SSEButtonColor             = "#000" %} /* Set buttons background color */
+  {% set SSETitleColor              = "#000" %} /* Set title background Color */
+  {% set SSEDescriptionStyle        = "italic" %} /* Set description style italic or normal */
+  {% set SSETagsColor               = "#E84747" %} /* Set color for a keyword tag */
+  {% set SSEPagination              = "#CECECE" %} /* Set inactive pagination button color */
+  {% set SSEPaginationHover         = "#A5A5A5" %} /* Set pagination hover button color */
+  {% set SSESizeTitle               = "28px" %} /* Set title font size */
+  {% set SSESizeDescription         = "16px" %} /* Set description font size */
+
+/************* Menu Search Panel Dropdown ******************************************************/
+/************************************************************************************/
+.smm-sse-quicklinks {
+ background: white;
+}
+.smm-sse-quicklinks a {
+   font-size: 15px;
+    color: #999;
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+.smm-sse-quicklinks a:hover {
+    color: #08c;
+}
+
+.widget-span.smm-sse-quicklinks {
+    background: white;
+    padding: 0 10px 20px 30px;
+    margin-top: 9px;
+    width: 100% !important;
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.widget-span.smm-sse-quicklinks p {
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: normal;
+    color: #999;
+}
+div.sse-open {
+   display: block;
+}
+div.sse-close {
+   display: none;
+}
+.smm-sse-bg {
+    background: rgba(0, 0, 0, 0.48);
+    position: absolute;
+    height: 100% !important;
+    width: 100%;
+}
+
+/* Search Bar AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA */
+table.gsc-search-box,
+form.gsc-search-box {
+    margin-bottom: 0 !important;
+}
+/* Search Input */
+.gsc-search-box-tools .gsc-search-box td.gsc-input {
+    padding-right: 0;
+}
+div.gsc-input-box {
+    border: 0px solid #D9D9D9; 
+    background: #fff;
+    height: 38px;
+}
+input.gsc-input {
+     background-image: none !important;
+     margin-top: -1px !important;
+     padding-left: 10px !important;
+     padding-right: 10px !important;
+     border: 1px solid {{ SSEButtonColor }} !important;
+     height: 36px !important;
+}
+.gsib_a {
+    padding: 0 !important;
+}
+/* reset buuton */
+.gsib_b {
+    display: none;    
+}
+
+/* Search Button */
+
+.gsc-search-box-tools .gsc-search-box td.gsc-search-button {
+    padding: 0;
+}
+input.gsc-search-button-v2 {
+    background-color: {{ SSEButtonColor }} !important;
+    background-image: url("http://cdn2.hubspot.net/hubfs/370601/blog/search-icon-white-one-md.png") !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: 24px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+input.gsc-search-button-v2 {
+    height: 38px !important;
+    padding: 0 27px !important;
+    margin-top: 0 !important;
+    cursor: pointer;
+}
+input.gsc-search-button {
+    margin-left: 0 !important;
+}
+input.gsc-search-button[type="button" i] {
+    -webkit-appearance: initial !important;
+    padding: initial !important;
+    background-color: initial !important;
+    border: initial !important;
+}
+
+div.gsc-input-box {
+  border: 1px solid #D9D9D9;
+  background: transparent;
+}
+input.gsc-input {
+    background: transparent;
+      background-image: url("//cdn2.hubspot.net/hubfs/370601/blog/search-icon-white-one-md.png?t=1448270537338")!important;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-size: 18px;
+    background-position: 1%;
+    padding-left: 30px !important;
+    color: white;
+}
+div.gsc-input-box, input.gsc-input {
+   border: 0 !important;
+}
+.gsc-search-button-v2 {
+   visibility: hidden;
+}
+.gsc-search-button {
+   background: url('http://www.cladglobal.com/images/menu_icon_close_trans.png');
+   background-repeat: no-repeat;
+    background-origin: border-box;
+    background-size: 16px;
+    background-position: center;
+   cursor: pointer;
+}
+input.gsc-input::-webkit-input-placeholder {
+   color: white;
+}
+input.gsc-input:-moz-placeholder { /* Firefox 18- */
+   color: white;
+}
+input.gsc-input::-moz-placeholder {  /* Firefox 19+ */
+   color: white; 
+}
+input.gsc-input:-ms-input-placeholder {  
+   color: white;  
+}
+@media (max-width: 767px) {
+   .smm-header-wrapper .widget-span.smm-sse-search {
+      top: 70px;
+      width: 90% !important;
+      background: #309ED6;
+   }
+   input.gsc-input {
+      font-size: 16px;
+      padding: 4px 9px;
+      border: 1px solid #D9D9D9;
+      width: 99%;
+      margin-left: 16px !important;
+      margin-top: 2px !important;
+   }
+   .widget-span.smm-sse-quicklinks p {
+      padding-top: 16px;
+   }
+}
